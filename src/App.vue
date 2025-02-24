@@ -47,6 +47,10 @@ function getTex(){
   return data.total
 }
 
+const deleteItem = (index) => {
+      data.items.splice(index);
+      
+    };
 </script>
 <template>
    <section class="mx-auto container bg-white border border-gray-400 min-h-screen p-12">
@@ -106,6 +110,9 @@ function getTex(){
                     </td>
                     <td class="py-1">
                         <input v-model="item.rate" class="w-full" type="number" placeholder="Rate">
+                    </td>
+                    <td>
+                      <button @click="deleteItem(index)" class=" bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Delete</button>
                     </td>
                     <td class="py-1 pr-5 text-right text-gray-800">
                         $ {{ item.amount = item.quantity * item.rate }}
